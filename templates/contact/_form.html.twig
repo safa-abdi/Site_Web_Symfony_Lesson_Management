@@ -1,0 +1,54 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{{ form_start(form, {'attr': {'class': 'row'}}) }}
+ <section class="ftco-section ftco-no-pt ftco-no-pb">
+          <div class="container">
+            <div class="row d-flex">
+              <div class="col-md-5 ftco-animate img img-5" style="background-image: url('{{asset('img/im7.jpg')}}');"></div>
+              <div class="col-md-7 ftco-animate makereservation p-4 p-md-5">
+                <div class="heading-section ftco-animate mb-5">
+                  <h2 class="mb-4" style="color:#FF8C00;">Envoyer un message</h2>
+                </div>
+ <form>
+ <div class="row">
+	<div class="col-md-6">
+         <div class="form-group">
+		{{ form_label(form.sender) }}
+		{{ form_widget(form.sender, {'attr': {'placeholder': 'saisir votre nom '}}) }}
+	    </div>
+	</div>
+	<div class="col-md-6">
+          <div class="form-group">
+			{{ form_label(form.contenu) }}
+	      	{{ form_widget(form.contenu,{'attr': {'placeholder': 'saisir votre message '}}) }}
+	      </div>
+	</div>
+	 <div class="col-md-6">
+         <div class="form-group">
+	    {{ form_label(form.email) }}
+		{{ form_widget(form.email,{'attr': {'placeholder': 'saisir votre email '}}) }}
+    	</div>
+	</div>
+	<div class="col-md-6">
+         <div class="form-group">
+		{{ form_label(form.phone) }}
+		{{ form_widget(form.phone,{'attr': {'placeholder': 'saisir votre phone_number'}}) }}
+	</div>
+	  </div>
+	</div>
+	 <div class="col-md-12 mt-3">
+           <div class="form-group">
+		<input type="submit" name="" value="Envoyer" class="btn btn-lg btn-warning ">
+		<input type="reset" name="" value="reset" class="btn btn-primary btn-lg">
+	</div>
+</form>
+<script>
+     function myFunction() {
+       alert("Bonjour merci pour votre message"); }
+                      </script>
+</div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+{{ form_end(form) }}

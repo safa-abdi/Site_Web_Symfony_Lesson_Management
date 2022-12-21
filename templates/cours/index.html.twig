@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cours index{% endblock %}
+
+{% block body %}
+    <h1>Cours index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Duree</th>
+                <th>Iduser</th>
+                <th>Idens</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cour in cours %}
+            <tr>
+                <td>{{ cour.id }}</td>
+                <td>{{ cour.date ? cour.date|date('Y-m-d') : '' }}</td>
+                <td>{{ cour.heure ? cour.heure|date('H:i:s') : '' }}</td>
+                <td>{{ cour.duree }}</td>
+                <td>{{ cour.iduser }}</td>
+                <td>{{ cour.idens }}</td>
+                <td>
+                    <a href="{{ path('cours_show', {'id': cour.id}) }}">show</a>
+                    
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
